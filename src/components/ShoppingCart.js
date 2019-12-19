@@ -4,8 +4,9 @@ import CartContext from "../contexts/CartContext"
 // Components
 import Item from './ShoppingCartItem';
 
-
+//Here ill be using the useContext way of using Context API to pass data vs props
 const ShoppingCart = () => {
+
     const {cart} = useContext(CartContext)
 
 	const getCartTotal = () => {
