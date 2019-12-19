@@ -30,11 +30,17 @@ function App() {
 			
 		}*/
 		};
+	  
+		const removeItem  = item => {
+			const items = cart.filter(items => items.id !==item );
+			setCart([...items])
+		}
+     
 
 
 	return (
-		<ProductContext.Provider value ={{cart, products,addItem }}>
-			<CartContext.Provider value ={{cart}} >
+		<ProductContext.Provider value ={{products,addItem }}>
+			<CartContext.Provider value ={{cart, removeItem}} >
 			<div className="App">
 {/*Here ill be using the Consumer way of using Context API to pass data vs props*/}
 			<Navigation />

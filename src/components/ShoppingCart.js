@@ -7,7 +7,7 @@ import Item from './ShoppingCartItem';
 //Here ill be using the useContext way of using Context API to pass data vs props
 const ShoppingCart = () => {
 
-    const {cart} = useContext(CartContext)
+    const {cart,removeItem} = useContext(CartContext)
 
 	const getCartTotal = () => {
 		return cart.reduce((acc, value) => {
@@ -19,7 +19,7 @@ const ShoppingCart = () => {
 		<div className="shopping-cart">
 			
 			{cart.map(item => (
-				<Item key={item.id} {...item} />
+				<Item key={item.id} {...item} removeItem={removeItem} />
 			))}
 
 			<div className="shopping-cart__checkout">
