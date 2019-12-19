@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navigation = props => {
+	console.log(props.cart)
 	return (
 		<div className="navigation">
 			<NavLink to="/">Products</NavLink>
