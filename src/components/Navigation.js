@@ -1,14 +1,28 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import CartContext from "../contexts/CartContext"
 
-const Navigation = props => {
+const Navigation = () => {
+		
 	return (
-		<div className="navigation">
+		//Here im using the Consumer way of using Context API
+		<CartContext.Consumer>
+			{data => {
+				return (
+            <div className="navigation">
 			<NavLink to="/">Products</NavLink>
 			<NavLink to="/cart">
-				Cart <span>{props.cart.length}</span>
+				Cart <span>{data.cart.length}</span>
 			</NavLink>
 		</div>
+
+				)
+			}}
+     
+		</CartContext.Consumer>
+			
+		
+		
 	);
 };
 
